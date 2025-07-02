@@ -1,0 +1,123 @@
+ul{
+    list-style: none;
+    display: flex;
+}
+li{
+    margin: 5px;
+}
+body{
+    background-image: url('/src//icons/notepad.png');
+     background-repeat: no-repeat;
+     background-position: 50% 80%;
+     background-size: cover;
+        height: 100vh;
+}
+.main-heading-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+   box-shadow: 1px 5px 6px #0f0f0f;
+   border-radius: 10px;
+    width: 90%;
+    padding: 10px;
+}
+.sign-up-login{
+    display: flex;
+    width: 60%;
+    justify-content: center;
+    text-align: center;
+}
+
+.sign-up-button, .login-button{
+    border: 1px  solid #FFD54F;
+    box-shadow: 1px 0 6px #FFD54F;
+    padding: 10px;
+    min-width: 40%;
+    color: #c5c3bc;
+    background-image: linear-gradient(45deg, #20011a, #4d3f5f);
+}
+.pen-it-down{
+    font-size: xx-large;
+    color: #000000;
+    text-shadow: #333333 -2px 1px 2px;
+    opacity: 90%;
+}
+
+.down-span{
+    color: #333333;
+    font-size: 40px;
+    font-weight: bold;
+    animation:dangle 1.5s ease-in-out infinite alternate;
+}
+.pen-it-down-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.footer{
+    position: fixed;
+    bottom: 0;
+}
+li{
+    color: #c5c3bc;
+}
+li:active{
+    box-shadow: #333333;
+}
+.nugget{
+    position: absolute;
+    font-size: small;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 5s steps(31, start) forwards;
+    text-align: center;
+    background-image: linear-gradient(20deg, #1b1b1b, #f8eded);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color:transparent;
+    padding: 10px;
+
+}
+.great-Thought{
+    text-shadow: #FFD54F -1px 0px 1px;
+ 
+}
+@keyframes dangle {
+    0%{
+        color: #333333;
+        margin-bottom: 50px;
+    }
+    100%{
+ 
+        color: #c5c3bc;
+        border-radius: 10px;
+    }
+}
+
+@keyframes typing{
+    from {
+        width:0;
+    }
+    to {
+        width:31ch;
+    }
+}
+
+@media (min-width:768px) {
+    .nugget{
+        font-size: large;
+    }
+}
+@media (min-width:2560px){
+    body{
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}

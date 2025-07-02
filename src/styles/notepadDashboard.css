@@ -1,0 +1,402 @@
+body{
+    color: #333333;
+    background-color: #FFFBEA;
+    overflow: hidden;
+}
+
+.alert-modal{
+    z-index: 2000;
+    background-color: #0f0f0f;
+    color:white;
+}
+.headline{
+    font-size: 50px;
+}
+.headline, .notes{
+    color: #FFD54F;
+
+    background-color: #333333;
+     background-image: linear-gradient(90deg, #20011a, #000000 );
+    opacity: 85%;
+}
+.dash-user-name{
+    font-size: large;
+}
+.dash-main{
+
+    margin-right: 10px;
+    display: flex;
+    min-height: 78%;
+    position: absolute;
+    width: 98%;
+    top: 60%;
+    left: 50%;
+    border-radius: 15px;
+    box-shadow: 1px 0 6px #333333;
+    transform: translate(-50%, -50%);
+}
+.main-1{
+    flex: 1;
+    box-shadow: 1px 0 6px #333333;
+    overflow: hidden;
+}
+
+
+.addnote-text-container{
+    z-index: 1000;
+    border: 3px dotted #bcc3c5;
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: background-color 0.5s ease-in;
+    cursor: pointer;
+    padding: 10px;
+    background-image: linear-gradient(90deg, #20011a, #000000 );
+    text-align: center;
+}
+.addnote-text-container:hover{
+    background-color: #333333;
+}
+
+.add-note-text{
+    text-align: center;
+    font-size: 40px;
+    opacity: 70%;
+    color: #bcc3c5 ;
+}
+.add-note-text:hover{
+    color: #FFD54F;
+    opacity: 80%;
+}
+.add-note-text:active{
+    color: #FFD54F;
+    opacity: 100%;
+}
+.plus-button{
+    font-size: 60px;
+}
+.data-read-mode{
+    overflow: auto;
+    max-height: 300px;
+    padding: 10px;
+    box-shadow: 2px 0 6px #131212;
+}
+
+/*DIALOG SECTION*/
+.task-input-dialog{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 90%;
+    height: 100%;
+    background-color:#c5c3bc;
+}
+.task-input-dialog::backdrop{
+    background-color: #333333;
+    opacity: 70%;
+    overflow: hidden;
+}
+
+input{
+    border: none;
+    padding: 10px;
+    min-height: 20px;
+}
+.task-input-select{
+    margin-top: 10px;
+}
+textarea{
+    min-width: 90%;
+    min-height: 80%;
+    margin-top: 45px;
+    padding: 10px;
+    border: none;
+    transition: border-radius 4s ease-in;
+}
+
+input:focus, textarea:focus{
+    border: 2px solid #333333;
+    box-shadow: 1px 0 6px #333333;
+    border-radius: 10px;
+}
+
+form{
+    border: none;
+}
+.form-container{
+    border: 10px solid rgb(67, 20, 235);
+    border:none;
+    height: 100%;
+}
+.textarea-container{
+    margin-top: 10px;
+    height: 75%;
+    overflow-y: visible;
+    border: none;
+}
+.task-input-dialog2{
+    margin: 0;
+    padding: 15x;
+    border: 5px solid red;
+}
+.filterButton{
+    display: none;
+      box-shadow: 1px 0 6px #333333;
+}
+.active{
+    display:block;
+}
+.filter-conttainer{
+    background-color:#bcc3c5;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    width: 50%;
+    opacity: 80%;
+}
+.filter-conttainer:active{
+    box-shadow: 0 5px 5px #FFD54F;
+}
+.filter-conttainer:hover{
+    background-color: #bcc3c5;
+    opacity: 100%;
+}
+.lastDialog{
+    position: fixed;
+    word-wrap: break-word;
+    word-break: break-all;
+    padding: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5000;
+    background-color: rgb(29, 28, 28);
+    color: rgb(212, 199, 199);
+    min-width: 95%;
+    min-height: 90%;
+    box-shadow: 1px 0 6px #0f0f0f;
+    overflow-y: auto;
+    max-height: 250px;
+    background-color: #333333;
+
+}
+button{
+    font-size: small;
+    border-radius: 5px;
+    transition: background-color 0.5s ease;
+    box-shadow: 2px 0 6px #333333;
+}
+button:active{
+    background-color: #333333;
+    color: #c5c3bc;
+    border: none;
+    
+}
+
+.editButton-and-deleteButton{
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position: fixed;
+    font-size: small;
+    padding: 5px;
+}
+.dropShadow{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3000;
+    background-color: #333333;
+    opacity: 98%;
+    min-width: 100%;
+    min-height: 100%;
+}
+.container-for-tasks-rendering{
+    word-wrap: break-word;
+    color: #bcc3c5;
+     background-image: linear-gradient(90deg, #20011a, #000000 );
+}
+.element-titleAnd-category-container{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    gap: 15px;
+    margin: 5px;
+    box-shadow: -1px -1px 3px #bcc3c5;
+    border-radius: 5px;
+    opacity: 80%;
+    cursor: pointer;
+}
+.element-titleAnd-category-container:hover{
+    opacity: 100%;
+}
+.element-titleAnd-category-container:active{
+    opacity: 100%;
+    box-shadow: -2px -3px 3px #bcc3c5;
+}
+.taskTitle{
+    font-weight: bold;
+    font-size: small;
+}
+.taskCategory{
+    font-size: small;
+}
+/* container for menu*/
+.outer-container{
+    position: absolute;
+    top: 20%;
+    width: 10px;
+    height: 10px;
+}
+/* Position and sizing of burger button */
+/*.bm-overlay {
+  background: rgba(185, 16, 207, 0.3);
+  position: absolute;
+  border: 2px solid blue;
+}*/
+
+/* Position and sizing of burger button 
+.bm-burger-button {
+  position: absolute;
+  width: 36px;
+  height: 30px;
+  left: 36px;
+  top: 12px;
+  padding-top: 2px;
+  border-radius: 10px;
+  box-shadow: 1px 0px 3px #8d8888;
+}*/
+
+/* General sidebar styles */
+.bm-menu {
+  background-image: linear-gradient(90deg, #20011a, #000000 );
+  opacity: 95%;
+  padding: 1em 1.5em 0;
+  font-size: 1.15em;
+  margin: 0;
+  width: 100%;
+  border-radius: 10px;
+}
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+  border: 2px solid white;
+}
+
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+    border: 2px solid #c5c3bc;
+    border-radius: 3px;
+    color: #c5c3bc;
+    box-shadow: 1px 0 6px #333333;
+    
+}
+.dark-mode{
+    box-shadow: 1px 0 6px #333333;
+}
+.light-mode{
+    box-shadow: 1px 0 6px #fffdfd;
+}
+.mode-icon{
+    background: transparent;
+    height: 40px;
+    max-width: 30px;
+    max-height: 40px;
+    position: absolute;
+    top: 10%;
+    left: 83%;
+    object-fit: fill;
+    text-align: center;
+    z-index: 30000;
+    border-radius: 50px;
+}
+@media (min-width: 768px){
+    /* container for menu*/
+.outer-container{
+    position: absolute;
+    top: 10%;
+    width: 10px;
+    height: 10px;
+    border: none;
+}
+.addnote-text-container{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.data-from-database{
+    overflow-y: auto;
+    max-height: 400px;
+    background-color: #333333;
+    
+}
+button{
+    margin: 10px;
+    padding: 5px;
+    font-size: small;
+    border-radius: 5px;
+    transition: background-color 0.5s ease;
+    box-shadow: 2px 0 6px #333333;
+}
+button:active{
+    background-color: #333333;
+    color: #c5c3bc;
+    border: none;
+    
+}
+textarea, input{
+    font-size: x-large;
+}
+textarea::placeholder, input::placeholder{
+    font-style: italic;
+}
+.task-input-select{
+    margin-top: 10px;
+    min-height: 30px;
+    margin-bottom: 20px;
+}
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 40px;
+  width: 40px;
+  border: 2px solid #c5c3bc;
+  border-radius: 3px;
+  color: #c5c3bc;
+  box-shadow: 1px 0 6px #333333;
+}
+
+}
+@media(min-width: 1024px){
+    .getthings, .storageclear{
+        font-size: small;
+        padding: 1px;
+    }
+
+.section-header{
+    margin-left: 10%;
+}
+dialog{
+    border: none;
+}
+button{
+    padding: 5px;
+    font-size: large;
+    border-radius: 5px;
+    transition: background-color 0.5s ease;
+    box-shadow: 2px 0 6px #333333;
+}
+button:active{
+    background-color: #333333;
+    color: #c5c3bc;
+    border: none;
+}
+    
+}

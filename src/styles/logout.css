@@ -1,0 +1,14 @@
+.logout-button{
+    border: 1px  solid #FFD54F;
+    box-shadow: 1px 0 6px #FFD54F;
+    padding: 5px;
+    min-width: 40%;
+    color: #c5c3bc;
+    opacity: 70%;
+    margin-top: 15px;
+    cursor: pointer;
+    background-image: linear-gradient(45deg, #20011a, #4d3f5f);
+}
+.logout-button:hover{
+    opacity: 100%;
+}

@@ -47,6 +47,7 @@ function NotepadDashboard(){
        return ()=>{ //THIS RETURN BLOCK IS USED TO UNMOUNT THIS LISTENER
     window.removeEventListener('resize', handleResize)
    };
+   // eslint-disable-next-line react-hooks/exhaustive-deps
    }, []);
 
    //this function handles button inside the modal for draft tasks
@@ -173,6 +174,7 @@ function NotepadDashboard(){
             localStorage.setItem('task-draft', JSON.stringify(taskDraftData));
         }
         setIsrefresh(!isRefresh);   //this is used to force a rerender of the component
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [input]);
 
     //basically used in closing dialog
@@ -298,6 +300,7 @@ const formHandler = (eventOrContent) => {
   useEffect(()=>{
     const task = tasks();
     setArray(task);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isRefresh]);//this line is used as a dependency.  when it changes, it causes the react component rerender and it reloads whats in the myArr array
     
   return(

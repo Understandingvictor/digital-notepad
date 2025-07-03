@@ -26,7 +26,10 @@ function Dialog({data, closeDdialog, edit, deLete}){
                 <small style={{fontStyle:'italic'}}>{data.category}</small><br/>
                 <p  className='data-read-mode' dangerouslySetInnerHTML={{__html: data.text}} />
                 <div className='editButton-and-deleteButton'>
-                    <button className='editButton' onClick={()=>(edit(data, {isEditable:"editable-data"}), closeDdialog())}>EDIT</button><button className='deleteButton' onClick={()=>deLete(data)}>DELETE</button><br/>
+                    <button className='editButton' onClick={()=>{
+                        edit(data, {isEditable:"editable-data"});
+                        closeDdialog();
+                     }}>EDIT</button><button className='deleteButton' onClick={()=>deLete(data)}>DELETE</button><br/>
                 </div>
                 
             </div>

@@ -6,7 +6,7 @@ import { isLoggedInContext } from '../context.js/context2';
 import Footer from './footer';
 
     function Login(){
-        const {usersName, setUsersName} = useContext(usersNameContext); //context to set users name at the global state
+        const { setUsersName} = useContext(usersNameContext); //context to set users name at the global state
         const {setIsLoggedIn} = useContext(isLoggedInContext); //context to set if user is logged in at global state
         const navigate = useNavigate();
         const [userLoginInput, setUserLoginInput] = useState('');

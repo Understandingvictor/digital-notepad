@@ -1,6 +1,7 @@
  import { useState, useRef, useContext } from "react"
  import { useNavigate } from "react-router-dom";
  import {isLoggedInContext} from '../context.js/context2'
+ import Spinner from "./spinner";
  import getRandomInt from "../utilities/passcodeGenerate";
 import Footer from './footer';
  import sendEmail from "../utilities/sendEmail";
@@ -16,10 +17,11 @@ import Footer from './footer';
     const [placeholder, setPlaceholder] = useState("enter your registered email");
     const [buttonText, setButtonText] = useState("SUBMIT");
     const [number, setNumber] = useState(1);
+    const [loader, setLoader] = useState(false);
     const Form = useRef();
     let passcodeRef = useRef();
-    const passcode = getRandomInt(10000, 99000);
-    
+    const passcode =  getRandomInt(10000, 99000);;
+
 
     const login = ()=>{
         contexts.setIsLoggedIn(true);
@@ -52,11 +54,13 @@ import Footer from './footer';
                     return;
                 }
                 if (JSON.parse(localStorage.getItem("notepadUser")).email === input){
+                    setLoader(true);
                     const emailSent = await sendEmail(e, Form);
                     if (emailSent){
+                        setLoader(false);
                         passcodeRef.current = passcode;
                         setPlaceholder("enter code sent to your email");
-                        setButtonText('verify');
+                        setButtonText('VERIFY');
                         setNumberState();
                         Form.current.reset();
                     }
@@ -71,7 +75,7 @@ import Footer from './footer';
                 }
             }
             if (number === 2){
-                if (passcodeRef.current == input){
+                if (passcodeRef.current === Number(input)){
                     setPlaceholder("enter new password");
                     setButtonText('CHANGE PASSWORD');
                     setNumberState(); //here is next
@@ -96,7 +100,6 @@ import Footer from './footer';
 
             
         } catch (error) {
-            console.log(error.message)
             alert ("something went wrong");
               return;
         }
@@ -105,6 +108,7 @@ import Footer from './footer';
     return(
         <>
         <div className="login-form">
+            {loader && <Spinner/>}
             <form ref={Form} onSubmit={submit}>
                 <input className="signup-input" onChange={(e)=>{setInput(e.target.value)}} name="email"  placeholder={placeholder}></input>
                 <input type="hidden" value={passcode} name="passcode"></input>

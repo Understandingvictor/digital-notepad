@@ -50,7 +50,7 @@ function Modal({children, onclickFunction}){
                 top: '50%', left: '50%', transform: 'translate(-50%, -50%)',  width:'50%', height:'50%',
                 paddingLeft:'10px', paddingRight:'10px', boxShadow:"1px 0 6px #0f0f0f", borderRadius:"10px"
                 }}>
-                <button onClick={onclickFunction}>X</button><br></br>
+                <button onClick={onclickFunction} style={{backgroundColor:'#0f0f0f', color:'#c5c3bc'}}>X</button><br></br>
                 {children}
                 
             </div> 

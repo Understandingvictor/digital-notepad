@@ -78,10 +78,11 @@ function SignUp(){
    const removeUser =()=>{
     localStorage.removeItem('notepadUser') ? console.log('removed successfully'):console.log('doesnt exist');
    }
+            //  <RemoveButton text={'clear Localstorage'} onclick={clearStorage}/>
+            // <RemoveButton text={'remove'} onclick={removeUser}/>
     return(
         <div>
-            <RemoveButton text={'clear Localstorage'} onclick={clearStorage}/>
-            <RemoveButton text={'remove'} onclick={removeUser}/>
+  
             <p style={{color:'red'}}>{error}</p>
             <div className="login-form">
             <form onSubmit={submit}>

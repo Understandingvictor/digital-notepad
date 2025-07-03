@@ -160,7 +160,7 @@ function NotepadDashboard(){
         }
             dialogRef.current.show();
             if (screenWidth < 768){ //this block adjusts the placing of the hamburger button on mobile when the editing mode is enabled
-                setTopLeft({top:'-40', left:'12'});
+                setTopLeft({top:'-70', left:'-18'});
             }
         }
 
@@ -381,12 +381,12 @@ const formHandler = (eventOrContent) => {
             <section>
                 <dialog className="task-input-dialog" ref={dialogRef}>
                     <div style={{ width:'100%', textAlign:'center', display:'flex', justifyContent:'center', padding:'0'}}>
-                        <button onClick={closeDialog} style={{border:'3px solid #333333', width:'10%', textAlign:'center', margin:'10px', borderRadius:'3px'}}>X</button>
+                        <button className='new-task-input-main' onClick={closeDialog}>X</button>
                         <div className={` mode-icon ${ isDarkMode ? 'dark-mode': 'light-mode'}`}  onClick={()=>setIsDarkMode(!isDarkMode)}><img  style={{ paddingTop: isDarkMode ? "20px":"0px", width:"60%"}} src={mode} alt="filter"/></div>
                     </div>
                     <div className='form-container'>
-                        <form style={{height:`${screenHeight - 100}px`}} onSubmit={submit}>
-                            <div><input name='title' onChange={formHandler} value={input.title || ""} placeholder='title'/></div>
+                        <form style={{height:  screenWidth < 768 ? 'calc(100vh - 50px)':'calc(100vh - 100px)'}} onSubmit={submit}>
+                            <div><input className='task-input' name='title' onChange={formHandler} value={input.title || ""} placeholder='title'/></div>
                             <div >
                                 <select required className='task-input-select' name="category" onChange={formHandler} value={input.category || ""}>
                                     <option value="" disabled>select category</option>
@@ -433,7 +433,7 @@ const formHandler = (eventOrContent) => {
                                 />
                                 <input name='createdAt' type="hidden" value={new Date().toISOString()}/>
                             </div>
-                            <button>SUBMIT</button>
+                            <button className='submit-button'>SAVE</button>
                         </form>
                     </div>
                 </dialog>  
@@ -451,7 +451,7 @@ const formHandler = (eventOrContent) => {
                                  <small style={{opacity:'70%'}}>you have a <span style={{opacity:'100%', fontSize:'150%'}}>DRAFT</span>, click edit to save it and continue</small>
                                 <h1>{draftAlertMessage.title}</h1>
                                 <p>{draftAlertMessage.text}</p>
-                                <button onClick={draftModalHandler} style={{padding:"15px"}}>EDIT</button>
+                                <button onClick={draftModalHandler} className='alertModalButton'>EDIT</button>
                             </div>
                            
                         </Modal>

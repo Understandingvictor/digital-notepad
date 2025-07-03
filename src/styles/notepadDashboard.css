@@ -1,13 +1,44 @@
 body{
     color: #333333;
+    padding: 10px;
     background-color: #FFFBEA;
     overflow: hidden;
 }
-
+.submit-button{
+    cursor: pointer;
+    box-shadow: 1px 0 6px #FFD54F;
+    padding: 10px;
+    min-width: 40%;
+    color: #c5c3bc;
+    opacity: 70%;
+    background-image: linear-gradient(45deg, #20011a, #4d3f5f);
+}
+.submit-button:active, .submit-button:hover, .alertModalButton:active, .alertModalButton:hover{
+    opacity: 100%;
+}
 .alert-modal{
     z-index: 2000;
     background-color: #0f0f0f;
-    color:white;
+    color:#c5c3bc;
+}
+.new-task-input-main{
+    border:3px solid #333333;
+    text-align:center; 
+    margin:10px ;
+    border-radius:3px;
+    color:#c5c3bc;
+    background-image: linear-gradient(45deg, #20011a, #4d3f5f);
+    min-width:7%;
+    box-shadow: none;
+}
+.alertModalButton{
+    border: 1px  solid #FFD54F;
+    box-shadow: 1px 0 6px #FFD54F;
+    padding: 10px;
+    min-width: 30%;
+    color: #c5c3bc;
+    opacity: 80%;
+    background-image: linear-gradient(45deg, #20011a, #4d3f5f);
 }
 .headline{
     font-size: 50px;
@@ -100,7 +131,7 @@ body{
     overflow: hidden;
 }
 
-input{
+.task-input{
     border: none;
     padding: 10px;
     min-height: 20px;
@@ -117,8 +148,8 @@ textarea{
     transition: border-radius 4s ease-in;
 }
 
-input:focus, textarea:focus{
-    border: 2px solid #333333;
+.task-input:focus, textarea:focus{
+    border: none;
     box-shadow: 1px 0 6px #333333;
     border-radius: 10px;
 }
@@ -188,11 +219,13 @@ button{
     border-radius: 5px;
     transition: background-color 0.5s ease;
     box-shadow: 2px 0 6px #333333;
+    opacity: 90%;
 }
-button:active{
+button:active, button:hover{
     background-color: #333333;
     color: #c5c3bc;
     border: none;
+    opacity: 100%;
     
 }
 

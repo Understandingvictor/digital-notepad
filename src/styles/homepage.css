@@ -35,7 +35,14 @@ body{
     padding: 10px;
     min-width: 40%;
     color: #c5c3bc;
+    opacity: 90%;
     background-image: linear-gradient(45deg, #20011a, #4d3f5f);
+}
+.sign-up-button:active, .sign-up-button:hover{
+    opacity: 100%;
+}
+.login-button:active, .login-button:hover{
+    opacity: 100%;
 }
 .pen-it-down{
     font-size: xx-large;

@@ -3,11 +3,11 @@ import { useNavigate, Link } from 'react-router-dom';
 import '../styles/signUp.css';
 import Footer from './footer';
 
-function RemoveButton({text, onclick}){
-    return(
-        <button onClick={onclick}>{text}</button>
-    )
-}
+// function RemoveButton({text, onclick}){
+//     return(
+//         <button onClick={onclick}>{text}</button>
+//     )
+// }
 
 function SignUp(){
 
@@ -31,9 +31,9 @@ function SignUp(){
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     };
 
-    const clearStorage=()=>{
-        localStorage.clear();
-    }
+    // const clearStorage=()=>{
+    //     localStorage.clear();
+    // }
     const submit=(event)=>{
         event.preventDefault();
 
@@ -75,9 +75,9 @@ function SignUp(){
 //     }
 //    )
 
-   const removeUser =()=>{
-    localStorage.removeItem('notepadUser') ? console.log('removed successfully'):console.log('doesnt exist');
-   }
+//    const removeUser =()=>{
+//     localStorage.removeItem('notepadUser') ? console.log('removed successfully'):console.log('doesnt exist');
+//    }
             //  <RemoveButton text={'clear Localstorage'} onclick={clearStorage}/>
             // <RemoveButton text={'remove'} onclick={removeUser}/>
     return(

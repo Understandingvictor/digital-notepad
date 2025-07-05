@@ -34,7 +34,7 @@ import Footer from './footer';
                     <div className='input-container'>
                         <input className="login-input" name="password" value={userLoginInput} onChange={e=>setUserLoginInput(e.target.value)} placeholder="password"/> <br/>
                     </div>
-                    <button className='login-button' >LOGIN</button>|<Link to={'/signup'}><small className='login-small'>sign up</small></Link><br/> <Link to={'/recover'}><small style={{marginTop:'60px', color:'#c5c3bc'}}>forgot passsword?</small></Link>
+                    <button className='login-button' >LOGIN</button>|<Link to={'/signup'}><small className='login-small'>sign up</small></Link><br/> <Link to={'/recover'}><div style={{marginTop:'10px'}}><small style={{marginTop:'60px', color:'#c5c3bc'}}>forgot passsword?</small></div></Link>
                 </form>
                 </div>
                 <Footer/>

@@ -21,9 +21,9 @@ function Dialog({data, closeDdialog, edit, deLete}){
             </div>
             
             <div className='lastDialog'>
-                <button onClick={closeDdialog}>X</button><br/>
+                <button onClick={closeDdialog} style={{backgroundColor:'#20011a', color:'#bcc3c5'}}>X</button><br/>
                 <h1>{data.title}</h1><br/>
-                <small style={{fontStyle:'italic'}}>{data.category}</small><br/>
+                <small style={{fontStyle:'italic', opacity:'70%'}}>{data.category}</small><br/>
                 <p  className='data-read-mode' dangerouslySetInnerHTML={{__html: data.text}} />
                 <div className='editButton-and-deleteButton'>
                     <button className='editButton' onClick={()=>{

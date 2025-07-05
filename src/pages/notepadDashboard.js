@@ -160,7 +160,7 @@ function NotepadDashboard(){
         }
             dialogRef.current.show();
             if (screenWidth < 768){ //this block adjusts the placing of the hamburger button on mobile when the editing mode is enabled
-                setTopLeft({top:'-70', left:'-18'});
+                setTopLeft({top:'-70', left:'-15'});
             }
         }
 
@@ -385,7 +385,7 @@ const formHandler = (eventOrContent) => {
                         <div className={` mode-icon ${ isDarkMode ? 'dark-mode': 'light-mode'}`}  onClick={()=>setIsDarkMode(!isDarkMode)}><img  style={{ paddingTop: isDarkMode ? "20px":"0px", width:"60%"}} src={mode} alt="filter"/></div>
                     </div>
                     <div className='form-container'>
-                        <form style={{height:  screenWidth < 768 ? 'calc(100vh - 50px)':'calc(100vh - 100px)'}} onSubmit={submit}>
+                        <form style={{height:  screenWidth < 768 ? 'calc(100vh - 80px)':'calc(100vh - 100px)'}} onSubmit={submit}>
                             <div><input className='task-input' name='title' onChange={formHandler} value={input.title || ""} placeholder='title'/></div>
                             <div >
                                 <select required className='task-input-select' name="category" onChange={formHandler} value={input.category || ""}>

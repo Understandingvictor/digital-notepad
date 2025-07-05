@@ -4,6 +4,19 @@ body{
     background-color: #FFFBEA;
     overflow: hidden;
 }
+.pen-it-down-container, .input-container, .login-form, .main{
+    animation: fadeIn forwards 1s ;
+}
+@keyframes fadeIn {
+    0%{
+        opacity: 0%;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+
+
 .submit-button{
     cursor: pointer;
     box-shadow: 1px 0 6px #FFD54F;
@@ -112,7 +125,8 @@ body{
     overflow: auto;
     max-height: 300px;
     padding: 10px;
-    box-shadow: 2px 0 6px #131212;
+    box-shadow: 1px 0px 6px #20011a;
+    border-radius: 7px;
 }
 
 /*DIALOG SECTION*/
@@ -211,7 +225,7 @@ form{
     box-shadow: 1px 0 6px #0f0f0f;
     overflow-y: auto;
     max-height: 250px;
-    background-color: #333333;
+    background-image: linear-gradient(90deg, #20011a, #000000 );
 
 }
 button{
@@ -228,14 +242,28 @@ button:active, button:hover{
     opacity: 100%;
     
 }
-
+.editButton, .deleteButton{
+    border-bottom: 1px  solid #FFD54F;
+   
+    padding: 5px;
+    width: 100px;
+    min-width: 40%;
+    color: #c5c3bc;
+    opacity: 80%;
+    margin-top: 5px;
+    cursor: pointer;
+    background-image: linear-gradient(45deg, #20011a, #272330);
+}
 .editButton-and-deleteButton{
+    gap: 10px;
+    display: flex;
     top: 95%;
     left: 50%;
     transform: translate(-50%,-50%);
     position: fixed;
     font-size: small;
     padding: 5px;
+    
 }
 .dropShadow{
     position: absolute;
@@ -243,7 +271,7 @@ button:active, button:hover{
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 3000;
-    background-color: #333333;
+    background-color:  #000000;
     opacity: 98%;
     min-width: 100%;
     min-height: 100%;

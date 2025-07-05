@@ -22,7 +22,7 @@
     font-style: italic;
 }
 .login-small{
-    margin-left: 5px;
+    margin-left: 10px;
     color: #c5c3bc;
     text-decoration: underline;
 }
@@ -39,6 +39,7 @@
     margin-bottom: 20px;
 }
 .login-button{
+    margin-bottom: 20px;
     padding: 15px;
 }
 }

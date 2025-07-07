@@ -75,8 +75,10 @@ function NotepadDashboard(){
 
    //this is used to log the user out
    const logout =()=>{
+
+    localStorage.setItem('isLoggedin', false);
     setIsLoggedIn(false);
-    navigate('/login');
+    navigate('/');
     console.log(isLoggedIn);
    }
   
@@ -308,7 +310,7 @@ const formHandler = (eventOrContent) => {
          <div>
             <section className='section-header'>
                 <header className="dash-header">
-                        <h1 className="headline"><span className="dash-user-name">{localStorage.getItem('username')}</span >NOTEPAD</h1>
+                        <h1 className="headline"><span className="dash-user-name">your</span >NOTEPAD</h1>
                 
                 </header>
             </section>

@@ -1,8 +1,8 @@
 .login-form{
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -10%);
     border-radius: 10px;
     background-image: linear-gradient(90deg, #20011a, #000000 );
     padding: 10px;
@@ -10,6 +10,30 @@
     box-shadow: 0 0 5px #20011a;
 }
 
+.nugget{
+    
+    position: absolute;
+    font-size: 100%;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 5s steps(31, start) forwards;
+    text-align: center;
+    background-image: linear-gradient(20deg, #1b1b1b, #f8eded);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color:transparent;
+    padding: 10px;
+
+}
+.great-Thought{
+    text-shadow: #FFD54F -1px 0px 1px;
+ 
+}
 .login-input{
     padding: 10px;
     width: 90%;

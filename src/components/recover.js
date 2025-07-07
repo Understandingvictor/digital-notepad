@@ -1,10 +1,11 @@
  import { useState, useRef, useContext } from "react"
- import { useNavigate } from "react-router-dom";
+ import { useNavigate, Link } from "react-router-dom";
  import {isLoggedInContext} from '../context.js/context2'
  import Spinner from "./spinner";
  import getRandomInt from "../utilities/passcodeGenerate";
 import Footer from './footer';
  import sendEmail from "../utilities/sendEmail";
+ import '../styles/recover.css'
 
 
 
@@ -20,7 +21,7 @@ import Footer from './footer';
     const [loader, setLoader] = useState(false);
     const Form = useRef();
     let passcodeRef = useRef();
-    const passcode =  getRandomInt(10000, 99000);;
+    const passcode =  getRandomInt(10000, 99000);
 
 
     const login = ()=>{
@@ -28,13 +29,14 @@ import Footer from './footer';
         navigate('/dashboard');
     }
 
+    //this function is used to change the password
     const changePassword = ()=>{
         try {
             const newPassword = input.trim();
-            const value = JSON.parse(localStorage.getItem('notepadUser'));
-            const changedCredentials = {email:value.email, password:newPassword};//password changed here
+            //const value = JSON.parse(localStorage.getItem('notepadUser'));
+            const changedCredentials = {password:newPassword};//password changed here
             localStorage.setItem('notepadUser', JSON.stringify(changedCredentials));
-            alert ('password set successfully, now login');
+            alert ('KUDOS!, password set successfully, enter password to continue adding note');
         } catch (error) {
             alert('change password error');
         }
@@ -48,12 +50,13 @@ import Footer from './footer';
     const submit = async(e)=>{
         try {
             e.preventDefault();
+            //checks if a user exists
             if (number === 1){
                 if (!localStorage.getItem("notepadUser")){
-                    alert('no accout exist, pls create one first');
+                    alert('no account exist, pls create one first by entering password and adding a note');
                     return;
                 }
-                if (JSON.parse(localStorage.getItem("notepadUser")).email === input){
+                
                     setLoader(true);
                     const emailSent = await sendEmail(e, Form);
                     if (emailSent){
@@ -68,11 +71,6 @@ import Footer from './footer';
                         alert('check your internet');
                         return;
                     }
-                }
-                else{
-                    alert('email doesnt exist, pls enter registered email');
-                    return;
-                }
             }
             if (number === 2){
                 if (passcodeRef.current === Number(input)){
@@ -89,8 +87,8 @@ import Footer from './footer';
             }
             if (number === 3){
                 changePassword()
-                setPlaceholder("enter password again to login");
-                setButtonText('LOGIN');
+                setPlaceholder("enter password again to verify");
+                setButtonText('CONTINUE TO ADD NOTE');
                 setNumberState();
                 Form.current.reset();
             }
@@ -112,7 +110,7 @@ import Footer from './footer';
             <form ref={Form} onSubmit={submit}>
                 <input className="signup-input" onChange={(e)=>{setInput(e.target.value)}} name="email"  placeholder={placeholder}></input>
                 <input type="hidden" value={passcode} name="passcode"></input>
-                <button className="login-button">{buttonText}</button>
+                <button className="login-button">{buttonText}</button> <Link to={'/'}>| <small style={{marginTop:'60px', color:'#c5c3bc'}}>back</small></Link>
             </form>
             
         </div>

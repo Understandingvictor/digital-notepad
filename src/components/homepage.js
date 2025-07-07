@@ -4,7 +4,7 @@ import Footer from './footer';
 function Homepage(){
     return(
         <div>
-            <h3 className='nugget'><span className='great-Thought'>GREAT THOUGHTS</span> deserves a page.</h3>
+           
 
             <div className="main-heading-container">
                 <div className='pen-it-down-container'>

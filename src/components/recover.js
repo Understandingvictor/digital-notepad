@@ -94,7 +94,7 @@ import Footer from './footer';
                 Form.current.reset();
             }
             if (number === 4){
-                if (passwordRef.current === input.trim()){
+                if (passwordRef.current == input.trim()){
                 login();
                 }
                 else{

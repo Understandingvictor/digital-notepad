@@ -15,12 +15,13 @@ import Footer from './footer';
 
     const contexts = useContext(isLoggedInContext)
     const [input, setInput] = useState();
-    const [placeholder, setPlaceholder] = useState("enter your registered email");
+    const [placeholder, setPlaceholder] = useState("enter an email");
     const [buttonText, setButtonText] = useState("SUBMIT");
     const [number, setNumber] = useState(1);
     const [loader, setLoader] = useState(false);
     const Form = useRef();
     let passcodeRef = useRef();
+    const passwordRef = useRef();
     const passcode =  getRandomInt(10000, 99000);
 
 
@@ -62,7 +63,7 @@ import Footer from './footer';
                     if (emailSent){
                         setLoader(false);
                         passcodeRef.current = passcode;
-                        setPlaceholder("enter code sent to your email");
+                        setPlaceholder("enter code sent to the email");
                         setButtonText('VERIFY');
                         setNumberState();
                         Form.current.reset();
@@ -93,7 +94,14 @@ import Footer from './footer';
                 Form.current.reset();
             }
             if (number === 4){
+                if (passwordRef.current === input.trim()){
                 login();
+                }
+                else{
+                    alert('password are not the same, retry')
+                    return;
+                }
+
             }
 
             

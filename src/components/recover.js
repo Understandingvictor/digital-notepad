@@ -33,7 +33,7 @@ import Footer from './footer';
     //this function is used to change the password
     const changePassword = ()=>{
         try {
-            const newPassword = input.trim();
+            const passwordRef = input.trim();
             //const value = JSON.parse(localStorage.getItem('notepadUser'));
             const changedCredentials = {password:newPassword};//password changed here
             localStorage.setItem('notepadUser', JSON.stringify(changedCredentials));
@@ -94,7 +94,7 @@ import Footer from './footer';
                 Form.current.reset();
             }
             if (number === 4){
-                if (passwordRef.current == input.trim()){
+                if (passwordRef.current === input.trim()){
                 login();
                 }
                 else{

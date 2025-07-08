@@ -13,7 +13,7 @@ import Footer from './footer';
  function Recover(){
     const navigate = useNavigate();
 
-    const contexts = useContext(isLoggedInContext)
+    const contexts = useContext(isLoggedInContext);
     const [input, setInput] = useState();
     const [placeholder, setPlaceholder] = useState("enter an email");
     const [buttonText, setButtonText] = useState("SUBMIT");
@@ -21,11 +21,12 @@ import Footer from './footer';
     const [loader, setLoader] = useState(false);
     const Form = useRef();
     let passcodeRef = useRef();
-    const passwordRef = useRef();
+    let passwordRef = useRef();
     const passcode =  getRandomInt(10000, 99000);
 
 
     const login = ()=>{
+        localStorage.setItem('isLoggedin', true); //tracks whether a user is logged in
         contexts.setIsLoggedIn(true);
         navigate('/dashboard');
     }
@@ -33,11 +34,10 @@ import Footer from './footer';
     //this function is used to change the password
     const changePassword = ()=>{
         try {
-            const passwordRef = input.trim();
             //const value = JSON.parse(localStorage.getItem('notepadUser'));
-            const changedCredentials = {password:newPassword};//password changed here
+            const changedCredentials = {password:passwordRef.current};//password changed here
             localStorage.setItem('notepadUser', JSON.stringify(changedCredentials));
-            alert ('KUDOS!, password set successfully, enter password to continue adding note');
+            alert ('KUDOS!, password set successfully');
         } catch (error) {
             alert('change password error');
         }
@@ -57,7 +57,6 @@ import Footer from './footer';
                     alert('no account exist, pls create one first by entering password and adding a note');
                     return;
                 }
-                
                     setLoader(true);
                     const emailSent = await sendEmail(e, Form);
                     if (emailSent){
@@ -75,7 +74,7 @@ import Footer from './footer';
             }
             if (number === 2){
                 if (passcodeRef.current === Number(input)){
-                    setPlaceholder("enter new password");
+                    setPlaceholder("enter a new password");
                     setButtonText('CHANGE PASSWORD');
                     setNumberState(); //here is next
                     Form.current.reset();
@@ -87,7 +86,7 @@ import Footer from './footer';
                 
             }
             if (number === 3){
-                changePassword()
+                passwordRef.current = input.trim();
                 setPlaceholder("enter password again to verify");
                 setButtonText('CONTINUE TO ADD NOTE');
                 setNumberState();
@@ -95,7 +94,9 @@ import Footer from './footer';
             }
             if (number === 4){
                 if (passwordRef.current === input.trim()){
-                login();
+
+                    changePassword();
+                    login();
                 }
                 else{
                     alert('password are not the same, retry')
@@ -103,13 +104,10 @@ import Footer from './footer';
                 }
 
             }
-
-            
         } catch (error) {
             alert ("something went wrong");
               return;
         }
-       
     }
     return(
         <>
@@ -123,7 +121,7 @@ import Footer from './footer';
             
         </div>
         <div>
-    <Footer/>
+            <Footer/>
         </div>
         
         </>

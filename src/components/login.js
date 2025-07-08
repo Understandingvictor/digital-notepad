@@ -69,7 +69,7 @@ import Footer from './footer';
                 <div className="login-form">
                 <form onSubmit={submit}>
                     <div className='input-container'>
-                        <input className="login-input" name="password" value={userLoginInput} onChange={e=>setUserLoginInput(e.target.value)} placeholder="sign up with password"/> <br/>
+                        <input className="login-input" name="password" value={userLoginInput} onChange={e=>setUserLoginInput(e.target.value)} placeholder="sign up or log in with password"/> <br/>
                     </div>
                     <button className='login-button' >ADD NOTE</button><br/> <Link to={'/recover'}><div style={{marginTop:'10px'}}><small style={{marginTop:'60px', color:'#c5c3bc'}}>forgot passsword?</small></div></Link>
                 </form>

@@ -310,7 +310,7 @@ const formHandler = (eventOrContent) => {
          <div>
             <section className='section-header'>
                 <header className="dash-header">
-                        <h1 className="headline"><span className="dash-user-name">your</span >NOTEPAD</h1>
+                        <h1 className="headline"><span className="dash-user-name">MY</span >NOTEPAD</h1>
                 
                 </header>
             </section>
